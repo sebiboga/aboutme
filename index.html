@@ -599,6 +599,7 @@
     <nav>
         <ul>
             <li><a href="#about">Despre</a></li>
+            <li><a href="#peviitor">peviitor.ro</a></li>
             <li><a href="#proiecte">Proiecte GitHub</a></li>
             <li><a href="#certificari">Certificări</a></li>
             <li><a href="#diplome">Diplome</a></li>
@@ -632,6 +633,13 @@
                         <span class="skill-tag">DevOps</span>
                         <span class="skill-tag">ISTQB</span>
                         <span class="skill-tag">Agile/Scrum</span>
+                        <span class="skill-tag">Apache SOLR</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">OpenCode AI</span>
+                        <span class="skill-tag">Big Pickle</span>
+                        <span class="skill-tag">NetData</span>
+                        <span class="skill-tag">Raspberry Pi</span>
+                        <span class="skill-tag">Product Owner</span>
                     </div>
                     <div class="about-stats">
                         <div class="stat-card">
@@ -647,19 +655,65 @@
                             <div class="label">Ani Performance</div>
                         </div>
                         <div class="stat-card">
-                            <div class="number">15+</div>
-                            <div class="label">Proiecte GitHub</div>
+                            <div class="number" id="peviitor-experience">--</div>
+                            <div class="label">peviitor.ro</div>
                         </div>
                         <div class="stat-card">
-                            <div class="number">5+</div>
-                            <div class="label">Certificări</div>
+                            <div class="number" id="ngo-experience">--</div>
+                            <div class="label">Președinte NGO</div>
                         </div>
                         <div class="stat-card">
-                            <div class="number">20+</div>
-                            <div class="label">Test Tools</div>
+                            <div class="number" id="opencode-experience">--</div>
+                            <div class="label">OpenCode/AI</div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        
+        <section id="peviitor">
+            <div class="section-header">
+                <div class="section-icon">🚀</div>
+                <h2>peviitor.ro - Proiect de suflet</h2>
+            </div>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">Sunt <strong>Fondator, Architect, Product Owner, PHP Backend Developer</strong> și DevOps pentru cel mai mare motor de căutare locuri de muncă din România.</p>
+            
+            <div class="perf-docs-grid">
+                <div class="perf-doc-card">
+                    <span class="doc-type">🌐</span>
+                    <h4>Motor de Căutare Locuri Muncă</h4>
+                    <p>Platformă open-source pentru agregarea locurilor de muncă din România</p>
+                    <a href="https://peviitor.ro/" target="_blank">Vizitează →</a>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">⚡</span>
+                    <h4>Performanță Excepțională</h4>
+                    <p>Am înlocuit serverul Dell PowerEDGE T110 II cu <strong>Raspberry Pi 5 4GB RAM</strong> datorită optimizărilor continue de performanță</p>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">🔍</span>
+                    <h4>Apache SOLR</h4>
+                    <p>Architect și administrator SOLR - cautare, indexare, optimizare</p>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">🤖</span>
+                    <h4>AI & OpenCode</h4>
+                    <p>Implementare AI OpenCode și Big Pickle pentru development, bug reporting și GitHub Actions</p>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">📊</span>
+                    <h4>NetData Monitoring</h4>
+                    <p>Monitorizare performanță în timp real pentru infrastructură</p>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">💰</span>
+                    <h4>Reducere Costuri</h4>
+                    <p>Optimizare continuă - reducerea costurilor de operare la minim</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 12px; color: white;">
+                <p style="font-size: 1.1rem; text-align: center;"><strong>🎯 Viziune:</strong> "Oamenii să găsească ușor locuri de muncă, iar companiile să găsească ușor candidați"</p>
             </div>
         </section>
         
@@ -933,17 +987,26 @@
         // Dynamic experience calculation based on career timeline
         (function() {
             const currentYear = new Date().getFullYear();
-            const itStartYear = 2003;  // Started at RubinKing
-            const qaStartYear = 2010;   // Started at Nokia - QA focus
-            const perfStartYear = 2014; // Started Performance Testing at Endava
+            const itStartYear = 2003;           // Started at RubinKing (IT career)
+            const qaStartYear = 2010;           // Started at Nokia - QA focus
+            const perfStartYear = 2010;          // Started Performance at Nokia on devices
+            const peviitorStartYear = 2016;      // Started peviitor.ro (shaqodoon rebranded)
+            const ngoStartYear = 2022;          // President of NGO from Feb 2022
+            const opencodeStartYear = 2024;     // Started with OpenCode/AI
             
             const itYears = currentYear - itStartYear;
             const qaYears = currentYear - qaStartYear;
             const perfYears = currentYear - perfStartYear;
+            const peviitorYears = currentYear - peviitorStartYear;
+            const ngoYears = currentYear - ngoStartYear;
+            const opencodeYears = currentYear - opencodeStartYear;
             
             document.getElementById('it-experience').textContent = itYears + '+';
             document.getElementById('qa-experience').textContent = qaYears + '+';
             document.getElementById('perf-experience').textContent = perfYears + '+';
+            document.getElementById('peviitor-experience').textContent = peviitorYears + '+';
+            document.getElementById('ngo-experience').textContent = ngoYears + '+';
+            document.getElementById('opencode-experience').textContent = opencodeYears + '+';
         })();
     </script>
 </body>

@@ -987,26 +987,30 @@
         // Dynamic experience calculation based on career timeline
         (function() {
             const currentYear = new Date().getFullYear();
+            const currentMonth = new Date().getMonth(); // 0-11
             const itStartYear = 2003;           // Started at RubinKing (IT career)
             const qaStartYear = 2010;           // Started at Nokia - QA focus
             const perfStartYear = 2010;          // Started Performance at Nokia on devices
             const peviitorStartYear = 2016;      // Started peviitor.ro (shaqodoon rebranded)
-            const ngoStartYear = 2022;          // President of NGO from Feb 2022
-            const opencodeStartYear = 2024;     // Started with OpenCode/AI
+            const ngoStartYear = 2022;           // President of NGO from Feb 2022
+            const opencodeStartMonth = 2;        // March 2026 = month 2 (0-indexed)
+            const opencodeStartYear = 2026;      // Started with OpenCode/AI ~March 2026
             
             const itYears = currentYear - itStartYear;
             const qaYears = currentYear - qaStartYear;
             const perfYears = currentYear - perfStartYear;
             const peviitorYears = currentYear - peviitorStartYear;
             const ngoYears = currentYear - ngoStartYear;
-            const opencodeYears = currentYear - opencodeStartYear;
+            
+            // For OpenCode/AI, calculate months since it's very recent
+            const opencodeMonths = (currentYear - opencodeStartYear) * 12 + (currentMonth - opencodeStartMonth);
             
             document.getElementById('it-experience').textContent = itYears + '+';
             document.getElementById('qa-experience').textContent = qaYears + '+';
             document.getElementById('perf-experience').textContent = perfYears + '+';
             document.getElementById('peviitor-experience').textContent = peviitorYears + '+';
             document.getElementById('ngo-experience').textContent = ngoYears + '+';
-            document.getElementById('opencode-experience').textContent = opencodeYears + '+';
+            document.getElementById('opencode-experience').textContent = opencodeMonths + ' luni';
         })();
     </script>
 </body>

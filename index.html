@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boga Sebastian Nicolae - Portofoliu</title>
+    <title>Boga Sebastian Nicolae - QA Engineer & Performance Testing Expert</title>
+    <meta name="description" content="Portofoliu profesional - QA Engineer cu experiență în Performance Testing, Test Automation și DevOps">
     <style>
         * {
             margin: 0;
@@ -11,95 +12,323 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --accent-hover: #ff6b6b;
+            --light: #f5f5f5;
+            --white: #ffffff;
+            --gray: #666;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #333;
-            background: #f5f5f5;
+            background: var(--light);
         }
         
-        header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #0f3460 100%);
             color: white;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        header h1 {
-            font-size: 2.5rem;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233,69,96,0.1) 0%, transparent 50%);
+            animation: pulse 10s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            box-shadow: 0 0 30px rgba(233,69,96,0.4);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(233,69,96,0.6);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.8;
+        .hero .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
         }
         
+        .hero .tagline {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            font-style: italic;
+        }
+        
+        .social-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+        
+        /* Navigation */
         nav {
-            background: #0f3460;
+            background: var(--primary);
             padding: 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: var(--shadow);
         }
         
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         nav a {
-            color: white;
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
             font-weight: 500;
-            transition: opacity 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
         }
         
-        nav a:hover {
-            opacity: 0.7;
+        nav a:hover, nav a.active {
+            color: white;
+            background: var(--accent);
         }
         
+        /* Main Content */
         main {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 2rem;
         }
         
         section {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
             margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
         }
         
         section h2 {
-            color: #1a1a2e;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #e94560;
-            display: inline-block;
+            color: var(--primary);
+            font-size: 1.8rem;
+            position: relative;
         }
         
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        .stat-card .label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .skill-tag:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* GitHub Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .project-card {
+            border: 2px solid #eee;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition);
+            background: linear-gradient(135deg, #fafafa, #fff);
+        }
+        
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(233,69,96,0.2);
+        }
+        
+        .project-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .project-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-card .repo-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .project-card .repo-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Certificates Grid */
         .certificates-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 1.5rem;
         }
         
         .certificate-card {
-            border: 1px solid #eee;
-            border-radius: 8px;
+            border: 2px solid #eee;
+            border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: var(--transition);
         }
         
         .certificate-card:hover {
+            border-color: var(--accent);
             transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
         }
         
         .certificate-card a {
@@ -111,13 +340,132 @@
             height: auto;
             max-height: 500px;
             object-fit: contain;
-            background: #f9f9f9;
+            background: #fafafa;
         }
         
         .certificate-card.tall img {
-            max-height: 700px;
+            max-height: 650px;
         }
         
+        .certificate-label {
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        /* Performance Testing Section */
+        .perf-docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .perf-doc-card {
+            background: linear-gradient(135deg, #f9f9f9, #fff);
+            border: 2px solid #eee;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .perf-doc-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .perf-doc-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .perf-doc-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .perf-doc-card a {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .perf-doc-card a:hover {
+            background: var(--accent-hover);
+        }
+        
+        .doc-type {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* PDF Documents */
+        .pdf-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .pdf-item {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .pdf-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .pdf-item .meta {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pdf-item a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pdf-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .pdf-item iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        /* Fullscreen Viewer */
         .fullscreen-viewer {
             display: none;
             position: fixed;
@@ -137,78 +485,65 @@
             justify-content: center;
         }
         
-        .fullscreen-viewer img,
-        .fullscreen-viewer iframe {
+        .fullscreen-viewer img {
             max-width: 90%;
             max-height: 90%;
             object-fit: contain;
+            border-radius: 8px;
         }
         
         .fullscreen-viewer .close-btn {
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: #e94560;
+            background: var(--accent);
             color: white;
             border: none;
             padding: 0.75rem 1.5rem;
             font-size: 1rem;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 6px;
+            transition: var(--transition);
         }
         
-        .pdf-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+        .fullscreen-viewer .close-btn:hover {
+            background: var(--accent-hover);
         }
         
-        .pdf-item {
-            background: #f9f9f9;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #e94560;
-        }
-        
-        .pdf-item h3 {
-            margin-bottom: 1rem;
-            color: #1a1a2e;
-        }
-        
-        .pdf-item a {
-            display: inline-block;
-            margin-bottom: 1rem;
-            color: #0f3460;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .pdf-item a:hover {
-            text-decoration: underline;
-        }
-        
-        .pdf-item iframe {
-            width: 100%;
-            height: 600px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        
+        /* Footer */
         footer {
-            background: #1a1a2e;
+            background: var(--primary);
             color: white;
             text-align: center;
             padding: 2rem;
             margin-top: 2rem;
         }
         
+        footer p {
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
             }
             
             nav ul {
-                gap: 1rem;
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
             }
             
             main {
@@ -219,95 +554,309 @@
                 padding: 1.5rem;
             }
             
-            .certificates-grid {
+            .projects-grid,
+            .certificates-grid,
+            .perf-docs-grid {
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        section {
+            animation: fadeInUp 0.5s ease;
+        }
+        
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Boga Sebastian Nicolae</h1>
-        <p>QA Engineer & Test Automation Specialist</p>
+    <header class="hero">
+        <div class="hero-content">
+            <img src="poza/SebiBoga.jpg" alt="Boga Sebastian" class="profile-img">
+            <h1>Boga Sebastian Nicolae</h1>
+            <p class="subtitle">QA Engineer & Performance Testing Expert</p>
+            <p class="tagline">"Testing is not a phase, it's a mindset"</p>
+            <div class="social-links">
+                <a href="https://github.com/sebiboga" target="_blank">GitHub</a>
+                <a href="https://sebiboga.github.io/aboutme/" target="_blank">Portfolio</a>
+            </div>
+        </div>
     </header>
     
     <nav>
         <ul>
+            <li><a href="#about">Despre</a></li>
+            <li><a href="#proiecte">Proiecte GitHub</a></li>
             <li><a href="#certificari">Certificări</a></li>
             <li><a href="#diplome">Diplome</a></li>
+            <li><a href="#performanta">Performance Testing</a></li>
             <li><a href="#documente">Documente</a></li>
         </ul>
     </nav>
     
     <main>
+        <section id="about">
+            <div class="section-header">
+                <div class="section-icon">👤</div>
+                <h2>Despre Mine</h2>
+            </div>
+            <div class="about-content">
+                <div>
+                    <img src="poza/Testing Week (285) (1).jpg" alt="Testing Week" style="width:100%; border-radius:12px; box-shadow: var(--shadow);">
+                </div>
+                <div>
+                    <p>Sunt un QA Engineer pasionat cu experiență în testare software, automatizare și performance testing. Mă dedic asigurării calității produselor software și îmbunătățirii continue a proceselor de testare.</p>
+                    <br>
+                    <p>Am lucrat în proiecte diverse, de la aplicații web la sisteme enterprise, acumulând experiență în:</p>
+                    <div class="skills-container">
+                        <span class="skill-tag">Test Automation</span>
+                        <span class="skill-tag">Performance Testing</span>
+                        <span class="skill-tag">Load Testing</span>
+                        <span class="skill-tag">JMeter</span>
+                        <span class="skill-tag">Selenium</span>
+                        <span class="skill-tag">API Testing</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">DevOps</span>
+                        <span class="skill-tag">ISTQB</span>
+                        <span class="skill-tag">Agile/Scrum</span>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="number">10+</div>
+                            <div class="label">Ani Experiență</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number">15+</div>
+                            <div class="label">Proiecte</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number">5+</div>
+                            <div class="label">Certificări</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="number">20+</div>
+                            <div class="label">Test Tools</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="proiecte">
+            <div class="section-header">
+                <div class="section-icon">💻</div>
+                <h2>Proiecte GitHub</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>opencode-ai-agent</h3>
+                    <p>Agent AI pentru automatizarea sarcinilor de dezvoltare software folosind OpenCode</p>
+                    <a href="https://github.com/sebiboga/opencode-ai-agent" class="repo-link" target="_blank">Vezi pe GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <h3>peviitor-validator</h3>
+                    <p>Validator pentru datele companiilor din platforma peviitor.ro</p>
+                    <a href="https://github.com/sebiboga/peviitor-validator" class="repo-link" target="_blank">Vezi pe GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <h3>opencode_AI_mcp_chrome_devtools</h3>
+                    <p>Integration OpenCode cu Chrome DevTools pentru web scraping</p>
+                    <a href="https://github.com/sebiboga/opencode_AI_mcp_chrome_devtools" class="repo-link" target="_blank">Vezi pe GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <h3>oportunitatisicariere</h3>
+                    <p>Proiect pentru oportunități și cariere în IT</p>
+                    <a href="https://github.com/sebiboga/oportunitatisicariere" class="repo-link" target="_blank">Vezi pe GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <h3>full_details</h3>
+                    <p>Aplicație pentru gestionarea detaliilor complete</p>
+                    <a href="https://github.com/sebiboga/full_details" class="repo-link" target="_blank">Vezi pe GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <h3>scraper_using_groq</h3>
+                    <p>Web scraper intelligence folosind Groq AI</p>
+                    <a href="https://github.com/sebiboga/scraper_using_groq" class="repo-link" target="_blank">Vezi pe GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <h3>dinamicHTMLdump</h3>
+                    <p>Tool pentru manipularea și dump de HTML dinamic</p>
+                    <a href="https://github.com/sebiboga/dinamicHTMLdump" class="repo-link" target="_blank">Vezi pe GitHub →</a>
+                </div>
+                <div class="project-card">
+                    <h3>ddns_demo</h3>
+                    <p>Demo pentru Dynamic DNS</p>
+                    <a href="https://github.com/sebiboga/ddns_demo" class="repo-link" target="_blank">Vezi pe GitHub →</a>
+                </div>
+            </div>
+        </section>
+        
         <section id="certificari">
-            <h2>Certificări</h2>
+            <div class="section-header">
+                <div class="section-icon">🏆</div>
+                <h2>Certificări</h2>
+            </div>
             <div class="certificates-grid">
                 <div class="certificate-card tall">
                     <a href="#" onclick="openFullscreen('ISTQB.jpg'); return false;">
                         <img src="ISTQB.jpg" alt="ISTQB Certification">
                     </a>
+                    <div class="certificate-label">ISTQB Certified Tester</div>
                 </div>
                 <div class="certificate-card tall">
                     <a href="#" onclick="openFullscreen('OctoPerf_certification.JPG'); return false;">
                         <img src="OctoPerf_certification.JPG" alt="OctoPerf Certification">
                     </a>
+                    <div class="certificate-label">OctoPerf Certification</div>
                 </div>
                 <div class="certificate-card">
                     <a href="#" onclick="openFullscreen('CRS.png'); return false;">
                         <img src="CRS.png" alt="CRS Certification">
                     </a>
+                    <div class="certificate-label">CRS Certification</div>
                 </div>
                 <div class="certificate-card">
                     <a href="#" onclick="openFullscreen('Usability.png'); return false;">
                         <img src="Usability.png" alt="Usability Certification">
                     </a>
+                    <div class="certificate-label">Usability Certification</div>
                 </div>
             </div>
+            <p style="margin-top: 1rem; color: var(--gray); font-style: italic;">Click pe orice certificare pentru vizualizare fullscreen</p>
         </section>
         
         <section id="diplome">
-            <h2>Diplome</h2>
+            <div class="section-header">
+                <div class="section-icon">🎓</div>
+                <h2>Diplome</h2>
+            </div>
             <div class="certificates-grid">
                 <div class="certificate-card">
                     <a href="#" onclick="openFullscreen('diploma.PNG'); return false;">
                         <img src="diploma.PNG" alt="Diploma Inginer">
                     </a>
+                    <div class="certificate-label">Diplomă Inginer</div>
                 </div>
                 <div class="certificate-card">
                     <a href="#" onclick="openFullscreen('BP.png'); return false;">
-                        <img src="BP.png" alt="BP">
+                        <img src="BP.png" alt="Diplomă BP">
                     </a>
+                    <div class="certificate-label">Diplomă Licență BP</div>
                 </div>
                 <div class="certificate-card">
                     <a href="#" onclick="openFullscreen('OS.PNG'); return false;">
-                        <img src="OS.PNG" alt="OS">
+                        <img src="OS.PNG" alt="Diplomă OS">
                     </a>
+                    <div class="certificate-label">Diplomă Sisteme Operare</div>
                 </div>
                 <div class="certificate-card">
                     <a href="#" onclick="openFullscreen('managementul_afacerilor.jpg'); return false;">
                         <img src="managementul_afacerilor.jpg" alt="Managementul Afacerilor">
                     </a>
+                    <div class="certificate-label">Managementul Afacerilor</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="performanta">
+            <div class="section-header">
+                <div class="section-icon">⚡</div>
+                <h2>Performance Testing</h2>
+            </div>
+            <p style="margin-bottom: 1.5rem;">Documente și prezentări din domeniul Performance Testing și Load Testing acumulate de-a lungul anilor de activitate.</p>
+            <div class="perf-docs-grid">
+                <div class="perf-doc-card">
+                    <span class="doc-type">PDF</span>
+                    <h4>📄 Performance Testing Guide</h4>
+                    <p>Ghid complet despre metodologii și tehnici de testare a performanței</p>
+                    <a href="rtc_2017/PerfTesting.pdf" target="_blank">Deschide →</a>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">PDF</span>
+                    <h4>📄 Load Testing Meta-Analysis</h4>
+                    <p>Analiză comprehensivă a metodelor de load testing</p>
+                    <a href="rtc_2017/load_testing_meta-analysis.pdf" target="_blank">Deschide →</a>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">PDF</span>
+                    <h4>📄 Capacity Planning 101</h4>
+                    <p>Introducere în planificarea capacității pentru sisteme scalabile</p>
+                    <a href="rtc_2017/Capacity101.pptx" target="_blank">Deschide →</a>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">PPTX</span>
+                    <h4>📊 Performance 101</h4>
+                    <p>Prezentare despre fundamentele performance testing</p>
+                    <a href="rtc_2017/Performance101.pptx" target="_blank">Deschide →</a>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">PDF</span>
+                    <h4>📄 Scuba Diving into Data (Facebook)</h4>
+                    <p>Caz de studiu: cum Facebook gestionează datele la scară masivă</p>
+                    <a href="rtc_2017/scuba-diving-into-data-at-facebook.pdf" target="_blank">Deschide →</a>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">PDF</span>
+                    <h4>📄 Kim Paper</h4>
+                    <p>Paper de cercetare despre performance optimization</p>
+                    <a href="rtc_2017/KimPaper.pdf" target="_blank">Deschide →</a>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">PDF</span>
+                    <h4>📄 Linux Performance Tools</h4>
+                    <p>Analiza instrumentelor Linux pentru monitoring performance</p>
+                    <a href="rtc_2017/Linux-tools.png" target="_blank">Deschide →</a>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">PDF</span>
+                    <h4>📄 Performance Tools Overview</h4>
+                    <p>Prezentare generală a instrumentelor de testare a performanței</p>
+                    <a href="rtc_2017/perf_tools.jpg" target="_blank">Deschide →</a>
+                </div>
+                <div class="perf-doc-card">
+                    <span class="doc-type">PDF</span>
+                    <h4>📄 American Statistical Association</h4>
+                    <p>Document statistic din 2008 - aplicații în QA</p>
+                    <a href="rtc_2017/2008amstat.pdf" target="_blank">Deschide →</a>
                 </div>
             </div>
         </section>
         
         <section id="documente">
-            <h2>Documente</h2>
+            <div class="section-header">
+                <div class="section-icon">📁</div>
+                <h2>Documente</h2>
+            </div>
             <div class="pdf-list">
                 <div class="pdf-item">
-                    <h3>Diploma Inginer</h3>
-                    <a href="DIPLOMA INGINER BOGA SEBASTIAN-NICOLAE.pdf" target="_blank">Deschide în fullscreen ↗</a>
+                    <h3>📜 Diploma Inginer</h3>
+                    <p class="meta">Diplomă de licență îninginerie</p>
+                    <a href="DIPLOMA INGINER BOGA SEBASTIAN-NICOLAE.pdf" target="_blank">↗ Deschide în fullscreen</a>
                     <iframe src="DIPLOMA INGINER BOGA SEBASTIAN-NICOLAE.pdf"></iframe>
                 </div>
                 <div class="pdf-item">
-                    <h3>Document Verificare Activitate (BAC)</h3>
-                    <a href="EVC S Boga.pdf" target="_blank">Deschide în fullscreen ↗</a>
+                    <h3>📜 Document Verificare Activitate (BAC)</h3>
+                    <p class="meta">Document oficial de verificare a activității</p>
+                    <a href="EVC S Boga.pdf" target="_blank">↗ Deschide în fullscreen</a>
                     <iframe src="EVC S Boga.pdf"></iframe>
                 </div>
                 <div class="pdf-item">
-                    <h3>Adeverință Vechime</h3>
-                    <a href="Adeverinta vechime - BOGA SEBASTIAN NICOLAE Mai 2022.pdf" target="_blank">Deschide în fullscreen ↗</a>
+                    <h3>📜 Adeverință Vechime</h3>
+                    <p class="meta">Document care atestă vechimea în muncă - Mai 2022</p>
+                    <a href="Adeverinta vechime - BOGA SEBASTIAN NICOLAE Mai 2022.pdf" target="_blank">↗ Deschide în fullscreen</a>
                     <iframe src="Adeverinta vechime - BOGA SEBASTIAN NICOLAE Mai 2022.pdf"></iframe>
                 </div>
             </div>
@@ -320,7 +869,8 @@
     </div>
     
     <footer>
-        <p>&copy; 2024 Boga Sebastian Nicolae</p>
+        <p>© 2024 Boga Sebastian Nicolae - QA Engineer & Performance Testing Expert</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Portofoliu creat cu pasiune pentru testare</p>
     </footer>
     
     <script>
@@ -338,6 +888,38 @@
         
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeFullscreen();
+        });
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Active nav highlight
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>

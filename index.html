@@ -660,7 +660,7 @@
                         </div>
                         <div class="stat-card">
                             <div class="number" id="ngo-experience">--</div>
-                            <div class="label">Președinte NGO</div>
+                            <div class="label"><a href="https://oportunitatisicariere.ro/" target="_blank" style="color: white; text-decoration: none;">Președinte A.O.S.C.</a></div>
                         </div>
                         <div class="stat-card">
                             <div class="number" id="opencode-experience">--</div>
@@ -930,8 +930,8 @@
             const peviitorYears = currentYear - peviitorStartYear;
             const ngoYears = currentYear - ngoStartYear;
             
-            // For OpenCode/AI, calculate months since it's very recent
-            const opencodeMonths = (currentYear - opencodeStartYear) * 12 + (currentMonth - opencodeStartMonth);
+            // For OpenCode/AI, calculate months - show at least 1 month
+            const opencodeMonths = Math.max(1, (currentYear - opencodeStartYear) * 12 + (currentMonth - opencodeStartMonth));
             
             document.getElementById('it-experience').textContent = itYears + '+';
             document.getElementById('qa-experience').textContent = qaYears + '+';

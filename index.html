@@ -600,11 +600,11 @@
         <ul>
             <li><a href="#about">Despre</a></li>
             <li><a href="#peviitor">peviitor.ro</a></li>
-            <li><a href="#proiecte">Proiecte GitHub</a></li>
             <li><a href="#certificari">Certificări</a></li>
             <li><a href="#diplome">Diplome</a></li>
             <li><a href="#performanta">Performance Testing</a></li>
             <li><a href="#documente">Documente</a></li>
+            <li><a href="#proiecte">Proiecte GitHub</a></li>
         </ul>
     </nav>
     
@@ -715,89 +715,6 @@
             <div style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 12px; color: white;">
                 <p style="font-size: 1.1rem; text-align: center;"><strong>🎯 Viziune:</strong> "Oamenii să găsească ușor locuri de muncă, iar companiile să găsească ușor candidați"</p>
             </div>
-        </section>
-        
-        <section id="proiecte">
-            <div class="section-header">
-                <div class="section-icon">💻</div>
-                <h2>Proiecte GitHub</h2>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>opencode-ai-agent</h3>
-                    <p>Agent AI pentru automatizarea sarcinilor de dezvoltare software folosind OpenCode</p>
-                    <a href="https://github.com/sebiboga/opencode-ai-agent" class="repo-link" target="_blank">Vezi pe GitHub →</a>
-                </div>
-                <div class="project-card">
-                    <h3>peviitor-validator</h3>
-                    <p>Validator pentru datele companiilor din platforma peviitor.ro</p>
-                    <a href="https://github.com/sebiboga/peviitor-validator" class="repo-link" target="_blank">Vezi pe GitHub →</a>
-                </div>
-                <div class="project-card">
-                    <h3>opencode_AI_mcp_chrome_devtools</h3>
-                    <p>Integration OpenCode cu Chrome DevTools pentru web scraping</p>
-                    <a href="https://github.com/sebiboga/opencode_AI_mcp_chrome_devtools" class="repo-link" target="_blank">Vezi pe GitHub →</a>
-                </div>
-                <div class="project-card">
-                    <h3>oportunitatisicariere</h3>
-                    <p>Proiect pentru oportunități și cariere în IT</p>
-                    <a href="https://github.com/sebiboga/oportunitatisicariere" class="repo-link" target="_blank">Vezi pe GitHub →</a>
-                </div>
-                <div class="project-card">
-                    <h3>full_details</h3>
-                    <p>Aplicație pentru gestionarea detaliilor complete</p>
-                    <a href="https://github.com/sebiboga/full_details" class="repo-link" target="_blank">Vezi pe GitHub →</a>
-                </div>
-                <div class="project-card">
-                    <h3>scraper_using_groq</h3>
-                    <p>Web scraper intelligence folosind Groq AI</p>
-                    <a href="https://github.com/sebiboga/scraper_using_groq" class="repo-link" target="_blank">Vezi pe GitHub →</a>
-                </div>
-                <div class="project-card">
-                    <h3>dinamicHTMLdump</h3>
-                    <p>Tool pentru manipularea și dump de HTML dinamic</p>
-                    <a href="https://github.com/sebiboga/dinamicHTMLdump" class="repo-link" target="_blank">Vezi pe GitHub →</a>
-                </div>
-                <div class="project-card">
-                    <h3>ddns_demo</h3>
-                    <p>Demo pentru Dynamic DNS</p>
-                    <a href="https://github.com/sebiboga/ddns_demo" class="repo-link" target="_blank">Vezi pe GitHub →</a>
-                </div>
-            </div>
-        </section>
-        
-        <section id="certificari">
-            <div class="section-header">
-                <div class="section-icon">🏆</div>
-                <h2>Certificări</h2>
-            </div>
-            <div class="certificates-grid">
-                <div class="certificate-card tall">
-                    <a href="#" onclick="openFullscreen('ISTQB.jpg'); return false;">
-                        <img src="ISTQB.jpg" alt="ISTQB Certification">
-                    </a>
-                    <div class="certificate-label">ISTQB Certified Tester</div>
-                </div>
-                <div class="certificate-card tall">
-                    <a href="#" onclick="openFullscreen('OctoPerf_certification.JPG'); return false;">
-                        <img src="OctoPerf_certification.JPG" alt="OctoPerf Certification">
-                    </a>
-                    <div class="certificate-label">OctoPerf Certification</div>
-                </div>
-                <div class="certificate-card">
-                    <a href="#" onclick="openFullscreen('CRS.png'); return false;">
-                        <img src="CRS.png" alt="CRS Certification">
-                    </a>
-                    <div class="certificate-label">CRS Certification</div>
-                </div>
-                <div class="certificate-card">
-                    <a href="#" onclick="openFullscreen('Usability.png'); return false;">
-                        <img src="Usability.png" alt="Usability Certification">
-                    </a>
-                    <div class="certificate-label">Usability Certification</div>
-                </div>
-            </div>
-            <p style="margin-top: 1rem; color: var(--gray); font-style: italic;">Click pe orice certificare pentru vizualizare fullscreen</p>
         </section>
         
         <section id="diplome">
@@ -923,6 +840,17 @@
                 </div>
             </div>
         </section>
+        
+        <section id="proiecte">
+            <div class="section-header">
+                <div class="section-icon">💻</div>
+                <h2>Proiecte GitHub</h2>
+            </div>
+            <p style="margin-bottom: 1.5rem;">Toate proiectele publice - încărcate din GitHub API</p>
+            <div id="github-projects" class="projects-grid">
+                <p>Se încarcă proiectele...</p>
+            </div>
+        </section>
     </main>
     
     <div id="fullscreenViewer" class="fullscreen-viewer" onclick="closeFullscreen(event)">
@@ -931,7 +859,7 @@
     </div>
     
     <footer>
-        <p>© 2024 Boga Sebastian Nicolae - QA Engineer & Performance Testing Expert</p>
+        <p id="copyright">© Boga Sebastian Nicolae - QA Engineer & Performance Testing Expert</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">Portofoliu creat cu pasiune pentru testare</p>
     </footer>
     
@@ -1011,6 +939,30 @@
             document.getElementById('peviitor-experience').textContent = peviitorYears + '+';
             document.getElementById('ngo-experience').textContent = ngoYears + '+';
             document.getElementById('opencode-experience').textContent = opencodeMonths + ' luni';
+            
+            // Dynamic copyright year
+            document.getElementById('copyright').textContent = '© ' + currentYear + ' Boga Sebastian Nicolae - QA Engineer & Performance Testing Expert';
+            
+            // Load GitHub repositories dynamically
+            fetch('https://api.github.com/users/sebiboga/repos?sort=pushed&per_page=100')
+                .then(response => response.json())
+                .then(repos => {
+                    const container = document.getElementById('github-projects');
+                    container.innerHTML = '';
+                    repos.forEach(repo => {
+                        const card = document.createElement('div');
+                        card.className = 'project-card';
+                        card.innerHTML = `
+                            <h3>${repo.name}</h3>
+                            <p>${repo.description || 'Fără descriere'}</p>
+                            <a href="${repo.html_url}" class="repo-link" target="_blank">Vezi pe GitHub →</a>
+                        `;
+                        container.appendChild(card);
+                    });
+                })
+                .catch(err => {
+                    document.getElementById('github-projects').innerHTML = '<p>Eroare la încărcarea proiectelor</p>';
+                });
         })();
     </script>
 </body>
